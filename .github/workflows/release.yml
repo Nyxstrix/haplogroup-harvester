@@ -1,0 +1,29 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Package extension
+        run: |
+          zip -j haplogroup-harvester.zip \
+            manifest.json background.js popup.js popup.html
+          echo "Zipped:"; unzip -l haplogroup-harvester.zip
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: ${{ github.ref_name }}
+          files: haplogroup-harvester.zip
+          generate_release_notes: true

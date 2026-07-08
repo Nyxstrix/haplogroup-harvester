@@ -1,0 +1,18 @@
+# --- Personal DNA data — NEVER commit these ---
+*.csv
+*.json
+!manifest.json
+relatives.*
+haplogroups_*.csv
+
+# --- OS / editor cruft ---
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
+
+# --- Node (only if you add tooling later) ---
+node_modules/
+npm-debug.log*

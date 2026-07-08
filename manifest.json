@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "23andMe Haplogroup Harvester",
+  "version": "1.0.0",
+  "description": "Bulk-extract paternal (Y-DNA) and maternal (mtDNA) haplogroups for your 23andMe DNA Relatives, using your own logged-in session. Human-paced and rate-limited.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "downloads"
+  ],
+  "host_permissions": [
+    "https://*.23andme.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "23andMe Haplogroup Harvester",
+    "default_popup": "popup.html"
+  }
+}
